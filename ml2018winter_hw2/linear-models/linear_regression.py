@@ -1,6 +1,6 @@
 import numpy as np
 
-from numpy.linalg import inv
+from numpy.linalg import pinv
 def linear_regression(X, y):
     '''
     LINEAR_REGRESSION Linear Regression.
@@ -15,6 +15,6 @@ def linear_regression(X, y):
     X_b = np.vstack((np.ones((1, X.shape[1])), X))
     # YOUR CODE HERE
     # begin answer
-    w = np.dot(np.dot((inv(np.dot(X_b ,X_b.T))), X_b), y.T)
+    w = np.dot(np.dot((pinv(np.dot(X_b ,X_b.T))), X_b), y.T)
     # end answer
     return w
